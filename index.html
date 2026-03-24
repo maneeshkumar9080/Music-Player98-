@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a83bb02b37.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Dark and light theme -->
+    <div class="theme">
+        <i class="fa-solid fa-toggle-off fa-3x theme_default_light theme_default" onclick="toggleDarkMode()"></i>
+    </div> 
+    <!-- Music Player Heading -->
+    <div class="header">
+        <h1>Music Player</h1>
+    </div>
+    <!-- All songs and playlist -->
+    <div class="music_player">
+        <!-- All songs with genre selection -->
+         <div class="common genre background-common">
+            <div class="filter">
+            <label for="songs">Filter by language:</label>
+            <select id="songs" name="songs" onchange="displaySelectedValue()">
+                <option value="all">All</option>
+                <option value="hindi">Hindi</option>
+                <option value="english">English</option>
+                <option value="kannada">Kannada</option>
+            </select>
+        </div>
+        <div class="filter_list">
+            <h3>All Songs</h3>
+            <ul id="songList">
+                <!-- Filtered songs will be displayed here -->
+            </ul>
+        </div>
+         </div>
+         <!-- Play song with prev and next btn and add playlist -->
+          <div class="common playlist background-common">
+            <div class="card">
+                <img src="" id="song_img" alt="Song_img">
+                <div class="container">
+                  <p id="song_name"></p>
+                  <p id="song_artist"></p>
+                </div>
+              </div>
+              <div class="audioPlayer">
+                <audio id="audioPlayer" controls>
+                    <source id="audioSource" type="audio/mp3">
+                    Your browser does not support the audio element.
+                  </audio>
+              </div>
+              <div class="prev_next">
+                <div  class="common_pn" id="prevSong"><i class="fa-solid fa-backward"></i></div>
+                <div class="common_pn"id="nextSong"><i class="fa-solid fa-forward"></i></div>
+              </div>
+              <div class="add_playlist" id="add_playlist">
+                <p class="addPlaylist">Add Playlist</p>
+              </div>
+          </div>
+         
+          <!-- Create Playlist -->
+           <div class="create_playlist">
+            <div class="inputButton">
+                <input id="inputPlaylist" type="text" name="create" placeholder="Enter Playlist Name"/>
+                <div id="createPlaylist">Create Playlist</div>
+            </div>
+            <div class="common showPlaylist background-common">
+                <p>Current Playlist</p>
+                <ul id="currentPlaylist">
+                    <!-- Filtered songs will be displayed here -->
+                </ul>
+                <p>All Playlist</p>
+                <ul class="playList_created">
+                    <!-- Filtered songs will be displayed here -->
+                </ul>
+            </div>
+           </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
